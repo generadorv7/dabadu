@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+background:url("https://media.discordapp.net/attachments/1289798414921502771/1479995438043234444/fondogenerator.png?ex=69ae10a9&is=69acbf29&hm=3b0e57a84f1cb0e4a7dc39564c52c4d7cee92e19cdb4a21f92343e09588b918a&=&format=webp&quality=lossless&width=828&height=552") center center no-repeat;
+background-size:cover;
+font-family:Arial;
+margin:0;
+display:flex;
+justify-content:center;
+color:white;
+min-height:100vh;
+}
+
+.page{
+max-width:420px;
+width:100%;
+padding:20px;
+text-align:center;
+background:rgba(0,0,0,0.75);
+border:2px solid #00FFFF;
+border-radius:10px;
+margin:20px;
+}
+
+h1{
+color:#00FFFF;
+font-size:22px;
+margin-bottom:5px;
+}
+
+.subtitle{
+color:#00FFFF;
+font-size:16px;
+font-weight:bold;
+letter-spacing:1px;
+margin-bottom:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+}
+
+.item{
+border:2px solid #444;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+background:#000;
+transition:0.2s;
+}
+
+.item img{
+width:100%;
+display:block;
+}
+
+.item:hover{
+transform:scale(1.03);
+}
+
+.selected{
+border-color:#00FFFF;
+box-shadow:0 0 10px #00FFFF;
+}
+
+button{
+margin-top:20px;
+padding:12px 30px;
+background:linear-gradient(45deg,#ff7a00,#00FFFF);
+border:none;
+border-radius:25px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:disabled{
+opacity:0.5;
+cursor:not-allowed;
+}
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:flex-start;
+overflow-y:auto;
+padding-top:50px;
+}
+
+.popupBox{
+background:#1c1c1c;
+padding:20px;
+border-radius:12px;
+width:320px;
+border:2px solid #00ffff;
+}
+
+input{
+width:90%;
+padding:12px;
+border-radius:8px;
+border:2px solid #00ffff;
+background:#111;
+color:white;
+font-size:16px;
+}
+
+.loading{
+display:none;
+margin-top:20px;
+}
+
+.spinner{
+width:40px;
+height:40px;
+border:4px solid #333;
+border-top:4px solid #00ffff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin:auto;
+}
+
+@keyframes spin{
+0%{transform:rotate(0)}
+100%{transform:rotate(360deg)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<h1>V3 GENERADOR</h1>
+<div class="subtitle">SELECCIONAR:</div>
+
+<div class="grid">
+
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479981554464719029/generator.png?ex=69ae03bb&is=69acb23b&hm=f97cffc57572c1fe21a9c7ca7011b0ded4853cee508328f2ce4ad91354eabcab&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985879769546823/X200000.png?ex=69ae07c2&is=69acb642&hm=529256fa44c1b863b1ec28001be1a1e6509c8409e6273d1e3d276f96fa5b2e22&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985880394367059/X300.000.png?ex=69ae07c2&is=69acb642&hm=5c539f90792e11cc731e59bc17730bee6a9f16cb8f2086813fad7919a8846593&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985881069916301/400.000.png?ex=69ae07c2&is=69acb642&hm=b6410b1841e877b891c34c56382ec6c488f8eefdc255c0deff2b4b80e56c7098&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985881417912461/500000.png?ex=69ae07c2&is=69acb642&hm=7752e288b1193e8cec46f26349801113d96d8d00a8b9b66d21ea542a56e7f11a&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985881933676565/600000.png?ex=69ae07c3&is=69acb643&hm=3bc5aee2c98f4f7c3c05d31e37773857a17a3563705a97dac9e1cfec75b12fdf&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985882676072673/700000.png?ex=69ae07c3&is=69acb643&hm=8a11c343e0d5859459c71200d50c716530d43d20364c6df9411050c1cc20d367&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985883296825435/800000.png?ex=69ae07c3&is=69acb643&hm=559f840391735de70c06150f19ba000d6b2e5b9c232a7f5bc3730d530aef0a51&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985883666190457/900000.png?ex=69ae07c3&is=69acb643&hm=d94c62da40a3df66068555a8f9436a997fa0d552a40ccfce4a77dfd82cfb2986&=&format=webp&quality=lossless"></div>
+<div class="item" onclick="selectItem(this)"><img src="https://media.discordapp.net/attachments/1289798414921502771/1479985879136075827/999999.png?ex=69ae07c2&is=69acb642&hm=414bff26264714690e148489729abb828a4bfb5a69415a8dcf3837bb643a94cd&=&format=webp&quality=lossless"></div>
+
+</div>
+
+<button id="btn" disabled onclick="openPopup()">ENVIAR</button>
+
+</div>
+
+<div class="popup" id="popup">
+
+<div class="popupBox">
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+<h3 style="margin:0;">INGRESA ID DEL JUGADOR</h3>
+<span onclick="cerrarPopup()" style="cursor:pointer;font-size:22px;color:#00FFFF;">✕</span>
+</div>
+
+<input id="playerID" placeholder="Ingresa el ID">
+
+<br><br>
+
+<button onclick="send()">ENVIAR</button>
+
+<div class="loading" id="loading">
+
+<p>Procesando...</p>
+
+<div class="spinner"></div>
+
+</div>
+
+<div id="result"></div>
+
+</div>
+
+</div>
+
+<script>
+
+let selectedImgs=[]
+
+function selectItem(el){
+
+let img = el.querySelector("img").src
+
+el.classList.toggle("selected")
+
+if(selectedImgs.includes(img)){
+selectedImgs = selectedImgs.filter(i => i !== img)
+}else{
+selectedImgs.push(img)
+}
+
+document.getElementById("btn").disabled = selectedImgs.length === 0
+
+}
+
+function openPopup(){
+
+document.getElementById("popup").style.display="flex"
+
+}
+
+function send(){
+
+let id=document.getElementById("playerID").value
+
+if(id.length<5){
+alert("ID INVALIDO")
+return
+}
+
+document.getElementById("loading").style.display="block"
+
+setTimeout(()=>{
+
+document.getElementById("loading").style.display="none"
+
+let imgs = ""
+
+selectedImgs.forEach(img=>{
+imgs += "<img src='"+img+"' width='90' style='margin:5px;border-radius:8px;border:2px solid #00FFFF;'>"
+})
+
+document.getElementById("result").innerHTML =
+"<br>"+imgs+"<p style='color:#00FFFF;font-size:18px;font-weight:bold;margin-top:15px;'>Listo tus recompensas seleccionadas llegaran en un plazo maximo de 48 Horas.</p>";
+},2000)
+
+}
+
+function volver(){
+
+document.getElementById("popup").style.display="none"
+
+document.getElementById("loading").style.display="none"
+
+document.getElementById("result").innerHTML=""
+
+document.getElementById("playerID").value=""
+
+selectedImgs=[]
+
+document.querySelectorAll(".item").forEach(i=>{
+i.classList.remove("selected")
+})
+
+document.getElementById("btn").disabled=true
+
+}
+
+function cerrarPopup(){
+
+document.getElementById("popup").style.display="none"
+
+document.getElementById("loading").style.display="none"
+
+document.getElementById("result").innerHTML=""
+
+document.getElementById("playerID").value=""
+
+}
+
+</script>
+
+</body>
+</html>
