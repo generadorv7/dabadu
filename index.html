@@ -73,7 +73,7 @@ box-shadow:0 0 10px #00FFFF;
 button{
 margin-top:20px;
 padding:12px 30px;
-background:linear-gradient(45deg,#ff7a00,#00FFFF);
+background:linear-gradient(45deg,#00FFFF,#00FFFF);
 border:none;
 border-radius:25px;
 font-weight:bold;
@@ -86,24 +86,25 @@ cursor:not-allowed;
 }
 
 .btnRegalo{
-margin-top:15px;
-padding:12px 30px;
-background:#7b2cff;
+width:100%;
+padding:18px 0;
+background:linear-gradient(90deg,#16b9fa,#031c6e);
 color:white;
 border:none;
-border-radius:10px;
-font-weight:bold;
-font-size:16px;
+border-radius:12px;
+font-size:18px;
+font-weight:750;
+letter-spacing:1px;
 cursor:pointer;
 display:flex;
 align-items:center;
 justify-content:center;
-gap:8px;
+gap:10px;
 }
 
 .icono{
-width:18px;
-height:18px;
+width:30px;
+height:30px;
 }
 
 .popup{
@@ -184,7 +185,8 @@ margin:auto;
 </div>
 
 <button id="btn" disabled onclick="openPopup()" class="btnRegalo">
-<img src="https://imgur.com/xFFmJrZ.png" class="icono">
+<img src="https://imgur.com/74ggJN8.png" class="icono">
+<span> REGALAR</span>
 </button>
 
 </div>
@@ -202,7 +204,7 @@ margin:auto;
 
 <br><br>
 
-<button onclick="send()">ENVIAR</button>
+<button onclick="send()" style="font-weight:700;">ENVIAR</button>
 
 <div class="loading" id="loading">
 
