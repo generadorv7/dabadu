@@ -85,6 +85,27 @@ opacity:0.5;
 cursor:not-allowed;
 }
 
+.btnRegalo{
+margin-top:15px;
+padding:12px 30px;
+background:#7b2cff;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+}
+
+.icono{
+width:18px;
+height:18px;
+}
+
 .popup{
 display:none;
 position:fixed;
@@ -162,7 +183,9 @@ margin:auto;
 
 </div>
 
-<button id="btn" disabled onclick="openPopup()">ENVIAR</button>
+<button id="btn" disabled onclick="openPopup()" class="btnRegalo">
+<img src="https://imgur.com/xFFmJrZ.png" class="icono">
+</button>
 
 </div>
 
